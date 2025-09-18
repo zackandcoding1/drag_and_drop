@@ -4,30 +4,30 @@ import { Column } from './Column';
 import { DndContext, type DragEndEvent } from '@dnd-kit/core';
 
 const COLUMNS: ColumnType[] = [
-  { id: 'TODO', title: 'To Do' },
-  { id: 'IN_PROGRESS', title: 'In Progress' },
-  { id: 'DONE', title: 'Done' },
+  { id: 'TODO', title: 'Disponível' },
+  { id: 'IN_PROGRESS', title: 'Indisponível' },
+  { id: 'DONE', title: 'Verificar' },
 ];
 
 const INITIAL_TASKS: Task[] = [
   {
     id: '1',
-    title: 'Projeto de Pesquisa',
-    description: 'Coletar requisitos e criar documentação inicial',
+    title: 'PC-01',
+    description: 'IPv4:  192.168.56.1',
     status: 'TODO',
   },
   {
     id: '2',
-    title: 'Design System',
-    description: 'Criar componente biblioteca',
+    title: 'PC-02',
+    description: 'IPv4:  192.168.56.2',
     status: 'TODO',
   },
   {
     id: '3',
-    title: 'Integração de API',
-    description: 'Implementar endpoints de API REST',
+    title: 'PC-03',
+    description: 'IPv4:  192.168.56.3',
     status: 'IN_PROGRESS'
-  }
+  },
 ];
 
 export default function App() {
