@@ -4,9 +4,9 @@ import { Column } from './Column';
 import { DndContext, type DragEndEvent } from '@dnd-kit/core';
 
 const COLUMNS: ColumnType[] = [
-  { id: 'TODO', title: 'Disponível' },
-  { id: 'IN_PROGRESS', title: 'Indisponível' },
-  { id: 'DONE', title: 'Verificar' },
+  { id: 'AVAILABLE', title: 'Disponível' },
+  { id: 'UNAVAILABLE', title: 'Indisponível' },
+  { id: 'CHECKING', title: 'Verificar' },
 ];
 
 const INITIAL_TASKS: Task[] = [
@@ -14,19 +14,19 @@ const INITIAL_TASKS: Task[] = [
     id: '1',
     title: 'PC-01',
     description: 'IPv4:  192.168.56.1',
-    status: 'TODO',
+    status: 'AVAILABLE',
   },
   {
     id: '2',
     title: 'PC-02',
     description: 'IPv4:  192.168.56.2',
-    status: 'TODO',
+    status: 'AVAILABLE',
   },
   {
     id: '3',
     title: 'PC-03',
     description: 'IPv4:  192.168.56.3',
-    status: 'IN_PROGRESS'
+    status: 'CHECKING'
   },
 ];
 
