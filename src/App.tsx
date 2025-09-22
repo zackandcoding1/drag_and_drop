@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import type { Task, Column as ColumnType } from './types';
 import { Column } from './Column';
-import { DndContext, type DragEndEvent } from '@dnd-kit/core';
+import { DndContext, rectIntersection, type DragEndEvent } from '@dnd-kit/core';
+import { restrictToWindowEdges } from '@dnd-kit/modifiers';
 
 const COLUMNS: ColumnType[] = [
   { id: 'AVAILABLE', title: 'Disponível' },
@@ -53,19 +54,25 @@ export default function App() {
     );
   }
 
-  return <div className='p-4'>
-    <div className='flex gap-8'>
-      <DndContext onDragEnd={handleDragEnd}>
-        {COLUMNS.map((column) => {
-          return (
-            <Column
-              key={column.id}
-              column={column}
-              tasks={tasks.filter((task) => task.status === column.id)}
-            />
-          );
-        })}
-      </DndContext>
+  return (
+    <div className='min-h-[96vh] flex items-center justify-center p-4'>
+      <div className='flex flex-col md:flex-row gap-4 md:gap-8 w-full max-w-7xl'>
+        <DndContext
+          onDragEnd={handleDragEnd}
+          modifiers={[restrictToWindowEdges]}
+          collisionDetection={rectIntersection}
+        >
+          {COLUMNS.map((column) => {
+            return (
+              <Column
+                key={column.id}
+                column={column}
+                tasks={tasks.filter((task) => task.status === column.id)}
+              />
+            );
+          })}
+        </DndContext>
+      </div>
     </div>
-  </div>;
+  );
 }
