@@ -28,7 +28,7 @@ Este projeto tem o objetivo de ilustrar como implementar interações de arrasta
 /src
   ├── components
   ├── styles
-  └── App.tsx (ou equivalente)
+  └── App.tsx
 index.html
 package.json
 vite.config.ts
