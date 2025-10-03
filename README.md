@@ -1,69 +1,69 @@
-# React + TypeScript + Vite
+# Drag and Drop
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Projeto demonstrativo de **drag & drop** (arrastar e soltar) usando **React**, **TypeScript** e **Vite**.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🎯 Visão Geral
 
-## Expanding the ESLint configuration
+Este projeto tem o objetivo de ilustrar como implementar interações de arrastar e soltar usando tecnologias modernas do ecossistema React. Pode servir como base para componentes de interfaces mais complexas que envolvam ordenação, movimentação de itens entre listas, painéis, etc.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🛠️ Tecnologias e Ferramentas
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- React  
+- TypeScript  
+- Vite  
+- ESLint (configurações iniciais)  
+- Tailwind CSS
+- Outras configurações auxiliares como `postcss.config.js`, `tsconfig`, etc.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+---
+
+## 📂 Estrutura do Projeto
+
+```
+/public
+/src
+  ├── components
+  ├── styles
+  └── App.tsx (ou equivalente)
+index.html
+package.json
+vite.config.ts
+tsconfig.json
+tailwind.config.js
+.eslint.config.js
+...
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🚀 Como rodar localmente
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+1. Clone o repositório:  
+   ```bash
+   git clone https://github.com/zackandcoding1/drag_and_drop.git
+   cd drag_and_drop
+   ```
+
+2. Instale as dependências:  
+   ```bash
+   npm install
+   # ou
+   yarn install
+   ```
+
+3. Rode o servidor de desenvolvimento:  
+   ```bash
+   npm run dev
+   # ou
+   yarn dev
+   ```
+
+O projeto será servido normalmente em `http://localhost:3000` (ou porta indicada pelo Vite).
+
+---
+
+**Obrigado por explorar este projeto!**
